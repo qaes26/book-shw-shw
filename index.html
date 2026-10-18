@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>شادية — حكاية حب ما إلها آخر</title>
+    <meta name="description" content="كتاب إهداء شخصي من قيس الجازي إلى شادية — حكاية حب ما إلها آخر">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Lateef:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Golden particles canvas -->
+    <canvas id="particlesCanvas"></canvas>
+
+    <!-- ==================== INTRO: GIFT UNWRAP ==================== -->
+    <div id="introScreen" class="intro-screen">
+        <div class="intro-bg-glow"></div>
+        <div class="gift-wrap" id="giftWrap">
+            <div class="gift-box" id="giftBox">
+                <div class="ribbon ribbon-v"></div>
+                <div class="ribbon ribbon-h"></div>
+                <div class="bow">
+                    <div class="bow-loop bow-l"></div>
+                    <div class="bow-loop bow-r"></div>
+                    <div class="bow-knot"></div>
+                </div>
+            </div>
+            <div class="gift-tag">
+                <span class="tag-to">إلى شادية</span>
+                <span class="tag-from">من قيس الجازي ❤️</span>
+            </div>
+        </div>
+        <p class="intro-tap">اضغطي لفتح الهدية</p>
+    </div>
+
+    <!-- ==================== BOOK CONTAINER ==================== -->
+    <div id="bookContainer" class="book-container hidden">
+        <!-- Page counter -->
+        <div class="page-counter" id="pageCounter">
+            <span id="currentNum">1</span> / <span id="totalNum">6</span>
+        </div>
+
+        <!-- Swipe hint (shown once) -->
+        <div class="swipe-hint" id="swipeHint">
+            <div class="swipe-hand">👆</div>
+            <p>اسحبي لتقليب الصفحات</p>
+        </div>
+
+        <!-- Book -->
+        <div class="book" id="book">
+
+            <!-- PAGE 1: COVER -->
+            <div class="page" id="page-1">
+                <div class="page-front">
+                    <div class="cover-page">
+                        <img src="images/cover.jpg" alt="" class="cover-bg-img">
+                        <div class="cover-overlay"></div>
+                        <div class="cover-inner">
+                            <div class="ornament">✦</div>
+                            <div class="gold-line"></div>
+                            <h1 class="title-main">شادية</h1>
+                            <h2 class="title-sub">حكاية حب ما إلها آخر</h2>
+                            <div class="gold-line"></div>
+                            <p class="title-ded">إلى شادية... المرأة التي جعلت<br>للحكايات معنى أجمل.</p>
+                            <div class="gold-line short"></div>
+                            <p class="title-author">قيس الجازي</p>
+                            <div class="ornament">✦</div>
+                            <div class="cover-heart">❤</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-back">
+                    <div class="page-texture"></div>
+                </div>
+            </div>
+
+            <!-- PAGE 2: DEDICATION -->
+            <div class="page" id="page-2">
+                <div class="page-front">
+                    <div class="ded-page">
+                        <img src="images/dedication.jpg" alt="" class="ded-bg-img">
+                        <div class="ded-overlay"></div>
+                        <div class="ded-inner">
+                            <div class="ded-orn">❦</div>
+                            <h2 class="ded-heading">الإهداء</h2>
+                            <div class="ded-sep"></div>
+                            <p class="ded-opening">إلى شادية، حبيبتي ورفيقة أيامي...</p>
+                            <p class="ded-body">يمكن ما أقدر أعبّر بالكلام عن كل اللي بقلبي إلك، عشان هيك قررت أجمع جزء من مشاعري بين صفحات كتاب، كل صفحة فيه بتحمل كلمة حب، وكل كلمة بتحكي عن شعور ما إله وصف.</p>
+                            <p class="ded-body">هذا الكتاب إلك، وكل حرف فيه إهداء من قلبي لقلبك.</p>
+                            <div class="ded-sep"></div>
+                            <p class="ded-closing"><strong>من قيس الجازي، إلى شادية... حكاية حب بتمنى تضل أجمل فصولها لسه ما انكتبت.</strong> <span class="pulse-heart">❤️</span></p>
+                            <div class="ded-orn">❦</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-back">
+                    <div class="page-texture"></div>
+                </div>
+            </div>
+
+            <!-- PAGE 3: LETTER -->
+            <div class="page" id="page-3">
+                <div class="page-front">
+                    <div class="letter-page">
+                        <div class="letter-inner">
+                            <div class="letter-head">
+                                <span class="letter-line-dec"></span>
+                                <span class="letter-rose">🌹</span>
+                                <span class="letter-line-dec"></span>
+                            </div>
+                            <h2 class="letter-title">رسالة من القلب</h2>
+                            <div class="letter-body">
+                                <p>يا شادية...</p>
+                                <p>كل يوم بمر عليّ بتأكد إنك أحلى قرار أخذته بحياتي</p>
+                                <p>ابتسامتك بتنوّر عتمة أيامي</p>
+                                <p>وصوتك بيهدّي كل عاصفة بقلبي</p>
+                                <p>إنتِ مش بس حب...</p>
+                                <p>إنتِ الأمان والبيت والحكاية كلها</p>
+                            </div>
+                            <p class="letter-sig">— قيس الجازي</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-back">
+                    <div class="page-texture"></div>
+                </div>
+            </div>
+
+            <!-- PAGE 4: QUALITIES -->
+            <div class="page" id="page-4">
+                <div class="page-front">
+                    <div class="qual-page">
+                        <div class="qual-inner">
+                            <h2 class="qual-title">لماذا أنتِ مميزة<br>يا شادية</h2>
+                            <div class="qual-grid">
+                                <div class="qual-card">
+                                    <span class="qual-ico">💖</span>
+                                    <h3>قلبك الطيب</h3>
+                                    <p>قلبك اللي بيحمل كل الحب والحنان</p>
+                                </div>
+                                <div class="qual-card">
+                                    <span class="qual-ico">✨</span>
+                                    <h3>روحك الجميلة</h3>
+                                    <p>روحك اللي بتنوّر أي مكان بتكوني فيه</p>
+                                </div>
+                                <div class="qual-card">
+                                    <span class="qual-ico">🌙</span>
+                                    <h3>هدوئك</h3>
+                                    <p>سكينتك اللي بتهدّي كل اضطراب</p>
+                                </div>
+                                <div class="qual-card">
+                                    <span class="qual-ico">🌹</span>
+                                    <h3>جمالك</h3>
+                                    <p>جمال ما إله مثيل، من جوّا وبرّا</p>
+                                </div>
+                                <div class="qual-card">
+                                    <span class="qual-ico">💫</span>
+                                    <h3>قوتك</h3>
+                                    <p>قوتك اللي بتلهمني كل يوم</p>
+                                </div>
+                                <div class="qual-card">
+                                    <span class="qual-ico">🤍</span>
+                                    <h3>وفائك</h3>
+                                    <p>وفائك اللي بيخلّيني أغنى إنسان</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-back">
+                    <div class="page-texture"></div>
+                </div>
+            </div>
+
+            <!-- PAGE 5: PROMISES -->
+            <div class="page" id="page-5">
+                <div class="page-front">
+                    <div class="prom-page">
+                        <div class="prom-inner">
+                            <h2 class="prom-title">وعود من قيس الجازي<br>إلى شادية</h2>
+                            <div class="prom-list">
+                                <div class="prom-item">
+                                    <span class="prom-heart">♥</span>
+                                    <p>أوعدك إني أضلّ أحبك بكل يوم أكثر من اللي قبله</p>
+                                </div>
+                                <div class="prom-item">
+                                    <span class="prom-heart">♥</span>
+                                    <p>أوعدك إني أكون سندك بكل لحظة صعبة</p>
+                                </div>
+                                <div class="prom-item">
+                                    <span class="prom-heart">♥</span>
+                                    <p>أوعدك إني أرسم ابتسامة على وجهك كل صباح</p>
+                                </div>
+                                <div class="prom-item">
+                                    <span class="prom-heart">♥</span>
+                                    <p>أوعدك إن حكايتنا رح تضل أجمل حكاية بالدنيا</p>
+                                </div>
+                                <div class="prom-item">
+                                    <span class="prom-heart">♥</span>
+                                    <p>أوعدك إني ما رح أتوقف عن محاولة أخلّيكِ سعيدة</p>
+                                </div>
+                            </div>
+                            <p class="prom-sig">بتوقيع القلب — قيس الجازي ❤️</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-back">
+                    <div class="page-texture"></div>
+                </div>
+            </div>
+
+            <!-- PAGE 6: FINAL -->
+            <div class="page" id="page-6">
+                <div class="page-front">
+                    <div class="final-page">
+                        <img src="images/rose.jpg" alt="" class="final-bg-img">
+                        <div class="final-overlay"></div>
+                        <div class="final-inner">
+                            <div class="final-text">
+                                <p>وإذا وصلتي لآخر صفحة، تذكّري إن الكتاب إله نهاية...</p>
+                                <p>بس الحكاية اللي بقلبي إلك ما إلها آخر.</p>
+                                <div class="final-sep"></div>
+                                <p>كل صفحة كانت كلمة، وكل كلمة كانت شعور،</p>
+                                <p>وكل شعور كان إلك إنتِ يا شادية.</p>
+                                <div class="final-sep"></div>
+                                <p class="final-bold">بحبك، واليوم وبكرا وكل الأيام الجايّة.</p>
+                            </div>
+                            <div class="final-signature">
+                                <span class="sig-dash">—</span>
+                                <span class="sig-name">قيس الجازي</span>
+                                <span class="sig-heart">❤️</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-back">
+                    <div class="page-texture back-cover">
+                        <p class="back-msg">نهاية الكتاب... لكن ليست نهاية الحكاية 💕</p>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /book -->
+
+        <!-- Navigation arrows -->
+        <button class="nav-arrow nav-next" id="navNext" aria-label="الصفحة التالية">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="nav-arrow nav-prev" id="navPrev" aria-label="الصفحة السابقة">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <!-- Page dots -->
+        <div class="page-dots" id="pageDots"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
